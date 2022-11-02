@@ -24,12 +24,12 @@ namespace kolors {
     const std::string HIDE = ESCAPE + "8" + M;
     const std::string CROSSES = ESCAPE + "9" + M;
 
-    std::string format_rgb(unsigned short &r, unsigned short &g, unsigned short &b);
-    std::string rgb_fg(unsigned short &r, unsigned short &g, unsigned short &b);
-    std::string rgb_bg(unsigned short &r, unsigned short &g, unsigned short &b);
+    std::string format_rgb(unsigned short r, unsigned short g, unsigned short b);
+    std::string set_fg(unsigned short r, unsigned short g, unsigned short b);
+    std::string set_bg(unsigned short r, unsigned short g, unsigned short b);
 
-    void print_fg(const std::string &s, unsigned short &r, unsigned short &g, unsigned short &b);
-    void print_bg(const std::string &s, unsigned short &r, unsigned short &g, unsigned short &b);
+    void print_fg(const std::string &s, unsigned short r, unsigned short g, unsigned short b);
+    void print_bg(const std::string &s, unsigned short r, unsigned short g, unsigned short b);
 }
 
 #endif //KOLORS_KOLORS_H

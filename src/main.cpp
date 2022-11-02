@@ -1,18 +1,17 @@
+#include <iostream>
 #include "kolors.h"
-
-using namespace kolors;
 
 int main() {
     system("");
 
-    for (unsigned short r = 0; r <= 255; r = r + 50) {
-        for (unsigned short g = 0; g <= 255; g = g + 50) {
-            for (unsigned short b = 0; b <= 255; b = b + 50) {
-                print_fg("This is a test\n", r, g , b);
-            }
-        }
-    }
+    // Setting colors manually
+    std::cout << kolors::ESCAPE << kolors::FOREGROUND << kolors::format_rgb(200, 20, 50) << kolors::M << "Test string\n" << kolors::RESET;
 
-    system("pause");
+    // Set color semi-manually
+    std::cout << kolors::set_fg(100,23,66) << "Yet another test string\n" << kolors::RESET;
+
+    // Using builtin print function
+    kolors::print_bg("Another test string\n", 23, 123, 90);
+
     return 0;
 }
