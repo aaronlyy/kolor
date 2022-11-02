@@ -1,17 +1,17 @@
-#include <iostream>
 #include "kolors.h"
+
+using namespace kolors;
 
 int main() {
     system("");
 
-    std::cout <<  K_RGB_FG(0,255,0) << K_RGB_BG(255,0,0) << K_ITALIC;
-    std::cout << "colors and effects are set" << "\n";
-    std::cout << "still set";
-    std::cout << K_RESET;
-
-    system("pause");
-
-    kolors::print_italic("Teststring\n");
+    for (unsigned short r = 0; r <= 255; r = r + 50) {
+        for (unsigned short g = 0; g <= 255; g = g + 50) {
+            for (unsigned short b = 0; b <= 255; b = b + 50) {
+                print_fg("This is a test\n", r, g , b);
+            }
+        }
+    }
 
     system("pause");
     return 0;
