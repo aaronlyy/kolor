@@ -13,5 +13,7 @@ int main() {
     // Using builtin print function
     kolors::print_bg("Another test string\n", 23, 123, 90);
 
+    system("pause >nul");
+
     return 0;
 }
