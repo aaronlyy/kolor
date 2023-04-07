@@ -1,7 +1,7 @@
 #include <iostream>
-#include "kolors.h"
+#include "kolor.h"
 
-namespace kolors {
+namespace kolor {
 
     // format RGB values to ANSI RGB string
     std::string format_rgb(unsigned short r, unsigned short g, unsigned short b) {

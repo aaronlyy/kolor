@@ -1,9 +1,9 @@
-#ifndef KOLORS_KOLORS_H
-#define KOLORS_KOLORS_H
+#ifndef KOLOR_KOLOR_H
+#define KOLOR_KOLOR_H
 
 #include <string>
 
-namespace kolors {
+namespace kolor {
     const std::string ESCAPE = "\033[";
     const std::string M = "m";
     const std::string RESET = ESCAPE + "0" + M;
@@ -32,4 +32,4 @@ namespace kolors {
     void print_bg(const std::string &s, unsigned short r, unsigned short g, unsigned short b);
 }
 
-#endif //KOLORS_KOLORS_H
+#endif //KOLOR_KOLOR_H

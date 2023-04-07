@@ -1,23 +1,27 @@
-# kolor: Pretty terminal output 👾
+# kolor: Colorful terminal output 👾
+
+Kolor adds colored text to your terminal output.
 
 ## Example
 
 ```c++
 #include <iostream>
-#include "kolors.h"
+#include "kolor.h"
 
 int main() {
-    system("");
 
     // Setting colors manually
-    std::cout << kolors::ESCAPE << kolors::FOREGROUND << kolors::format_rgb(200, 20, 50) << kolors::M << "Test string\n" << kolors::RESET;
+    std::cout << kolor::ESCAPE << kolor::FOREGROUND << kolor::format_rgb(200, 20, 50) << kolor::M << "Test string\n" << kolor::RESET;
 
     // Set color semi-manually
-    std::cout << kolors::set_fg(100,23,66) << "Yet another test string\n" << kolors::RESET;
+    std::cout << kolor::set_fg(100,23,66) << "Yet another test string\n" << kolor::RESET;
 
     // Using builtin print function
-    kolors::print_bg("Another test string\n", 23, 123, 90);
-    
+    kolor::print_bg("Another test string\n", 23, 123, 90);
+
+    // reset everything
+    std::cout << kolor::RESET;
+
     return 0;
 }
 ```
