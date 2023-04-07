@@ -1,4 +1,4 @@
-# kolors: Pretty terminal output 👾
+# kolor: Pretty terminal output 👾
 
 ## Example
 
