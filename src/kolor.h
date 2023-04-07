@@ -30,6 +30,7 @@ namespace kolor {
 
     void print_fg(const std::string &s, unsigned short r, unsigned short g, unsigned short b);
     void print_bg(const std::string &s, unsigned short r, unsigned short g, unsigned short b);
+    void print(const std::string &s, unsigned short rf, unsigned short gf, unsigned short bf, unsigned short rb, unsigned gb, unsigned bb);
 }
 
 #endif //KOLOR_KOLOR_H

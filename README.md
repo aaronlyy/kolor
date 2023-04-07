@@ -1,6 +1,8 @@
 # kolor: Colorful terminal output 👾
 
-Kolor adds colored text to your terminal output.
+Kolor adds colored text to your terminal output using ANSI escape codes.
+
+[How it works](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 ## Example
 
