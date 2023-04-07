@@ -1,6 +1,8 @@
-# kolor: Colorful terminal output 👾
+<p align="center">
+  <img src=".\media\kolor_3.png" alt="banner">
+</p>
 
-Kolor adds colored text to your terminal output using ANSI escape codes.
+<h3 align="center">Pretty terminal output using ANSI escape codes</h3>
 
 [How it works](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
