@@ -36,6 +36,12 @@ int main() {
 }
 ```
 
+### Output
+
+<p align="center">
+  <img src=".\media\screenshot.png" alt="screenshot">
+</p>
+
 ## About
 
 Made with ♥ by [aaronlyy](https://github.com/aaronlyy)
