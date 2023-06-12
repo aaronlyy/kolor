@@ -13,7 +13,7 @@ int main() {
     kolor::print_bg("Change background using print_bg\n", 23, 123, 90);
 
     // use print_fg function to change the foreground
-    kolor::print_fg("Change background using print_fg\n", 23, 123, 90);
+    kolor::print_fg("Change foreground using print_fg\n", 23, 123, 90);
 
     // use print function to change background and foreground of an output
     kolor::print("use print function to change background and foreground", 144, 252, 3, 3, 140, 252);
