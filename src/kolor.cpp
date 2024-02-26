@@ -18,6 +18,10 @@ namespace kolor {
         return ESCAPE_BACKGROUND + format_rgb(r, g, b) + M;
     }
 
+    std::string bold() {
+        return kolor::ESCAPE + kolor::BOLD + M;
+    }
+
     // print string with given rgb values as foreground
     void print_fg(const std::string &s, unsigned short r, unsigned short g, unsigned short b) {
         std::cout << set_fg(r, g, b) << s << RESET;
