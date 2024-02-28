@@ -3,37 +3,70 @@
 
 namespace kolor {
 
-    // format RGB values to ANSI RGB string
+    std::string escape(const std::string &s) {
+        return kolor::ESCAPE + s + kolor::M;
+    }
+
     std::string format_rgb(unsigned short r, unsigned short g, unsigned short b) {
         return std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b);
     }
 
-    // concat ESCAPE + FOREGROUND + RGB + M
-    std::string set_fg(unsigned short r, unsigned short g, unsigned short b){
-        return ESCAPE_FOREGROUND + format_rgb(r, g, b) + M;
+    std::string set_reset() {
+        return kolor::RESET_E;
     }
 
-    // concat ESCAPE + BACKGROUND + RGB + M
-    std::string set_bg(unsigned short r, unsigned short g, unsigned short b){
-        return ESCAPE_BACKGROUND + format_rgb(r, g, b) + M;
+    std::string set_fg_rgb(unsigned short r, unsigned short g, unsigned short b){
+        return kolor::ESCAPE + kolor::FOREGROUND + format_rgb(r, g, b) + kolor::M;
     }
 
-    std::string bold() {
-        return kolor::ESCAPE + kolor::BOLD + M;
+    std::string set_bg_rgb(unsigned short r, unsigned short g, unsigned short b){
+        return kolor::ESCAPE + kolor::BACKGROUND + format_rgb(r, g, b) + kolor::M;
+    }
+
+    std::string set_bold() {
+        return kolor::escape(kolor::BOLD);
+    }
+
+    std::string set_italic() {
+        return kolor::escape(kolor::ITALIC);
+    }
+
+    std::string set_light() {
+        return kolor::escape(kolor::LIGHT);
+    }
+
+    std::string set_underline() {
+        return kolor::escape(kolor::UNDERLINE);
     }
 
     // print string with given rgb values as foreground
-    void print_fg(const std::string &s, unsigned short r, unsigned short g, unsigned short b) {
-        std::cout << set_fg(r, g, b) << s << RESET;
+    void print_fg_rgb(const std::string &s, unsigned short r, unsigned short g, unsigned short b) {
+        std::cout << set_fg_rgb(r, g, b) << s << kolor::RESET_E;
     }
 
     // print string with given rgb values as background
-    void print_bg(const std::string &s, unsigned short r, unsigned short g, unsigned short b) {
-        std::cout << set_bg(r, g, b) << s << RESET;
+    void print_bg_rgb(const std::string &s, unsigned short r, unsigned short g, unsigned short b) {
+        std::cout << set_bg_rgb(r, g, b) << s << kolor::RESET_E;
     }
 
     // print text with given foreground and background rgb values
-    void print(const std::string &s, unsigned short fr, unsigned short fg, unsigned short fb, unsigned short br, unsigned bg, unsigned bb) {
-        std::cout << set_bg(fr, fg, fb) << set_fg(br, bg, bb) << s << RESET;
+    void print_rgb(const std::string &s, unsigned short fr, unsigned short fg, unsigned short fb, unsigned short br, unsigned bg, unsigned bb) {
+        std::cout << set_bg_rgb(fr, fg, fb) << set_fg_rgb(br, bg, bb) << s << kolor::RESET_E;
+    }
+
+    void print_bold(const std::string &s) {
+        std::cout << set_bold() << s << kolor::RESET_E;
+    }
+
+    void print_italic(const std::string &s) {
+        std::cout << kolor::set_italic() << s << kolor::RESET_E;
+    }
+
+    void print_light(const std::string &s) {
+        std::cout << kolor::set_light() << s << kolor::RESET_E;
+    }
+
+    void print_underline(const std::string &s) {
+        std::cout << kolor::set_underline() << s << kolor::RESET_E;
     }
 }
